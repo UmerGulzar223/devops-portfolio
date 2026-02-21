@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Muhammad Umer - DevOps Engineer specializing in Cloud Infrastructure, Kubernetes, CI/CD Pipelines, and Infrastructure as Code">
+    <meta name="keywords" content="DevOps, Cloud Engineer, Kubernetes, AWS, Azure, Terraform, CI/CD, Infrastructure as Code">
+    <meta name="author" content="Muhammad Umer">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Muhammad Umer | DevOps Engineer">
+    <meta property="og:description" content="DevOps Engineer specializing in Cloud Infrastructure, Kubernetes, and CI/CD Pipelines">
+    <meta property="og:type" content="website">
+
+    <title>Muhammad Umer | DevOps Engineer</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#128187;</text></svg>">
+</head>
+<body>
+    <!-- Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="terminal-loader">
+                <span class="prompt">$</span>
+                <span class="command">initializing portfolio</span>
+                <span class="cursor">_</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">
+                <span class="logo-bracket">{</span>
+                <span class="logo-text">MU</span>
+                <span class="logo-bracket">}</span>
+            </a>
+
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+
+            <div class="nav-actions">
+                <a href="#contact" class="btn btn-primary btn-sm">Hire Me</a>
+                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg">
+            <div class="grid-pattern"></div>
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+        </div>
+
+        <div class="container hero-content">
+            <div class="hero-text">
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    Available for opportunities
+                </div>
+
+                <h1 class="hero-title">
+                    <span class="greeting">Hello, I'm</span>
+                    <span class="name">Muhammad Umer</span>
+                </h1>
+
+                <div class="hero-role">
+                    <span class="role-prefix">></span>
+                    <span class="role-text" id="typed-text"></span>
+                    <span class="typed-cursor">|</span>
+                </div>
+
+                <p class="hero-description">
+                    Cybersecurity graduate with hands-on expertise in <strong>DevOps</strong>,
+                    <strong>infrastructure automation</strong>, and <strong>cloud-native</strong> solutions.
+                    I build scalable CI/CD pipelines, deploy Kubernetes clusters, and architect
+                    secure cloud infrastructure for production environments.
+                </p>
+
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">6+</span>
+                        <span class="stat-label">Enterprise Clients</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">150+</span>
+                        <span class="stat-label">VMs Managed</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">100+</span>
+                        <span class="stat-label">Cloud Resources</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">CA$76K</span>
+                        <span class="stat-label">Costs Analyzed</span>
+                    </div>
+                </div>
+
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-primary">
+                        <i class="fas fa-folder-open"></i>
+                        View Projects
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <i class="fas fa-paper-plane"></i>
+                        Get in Touch
+                    </a>
+                    <a href="Muhammad_Umer_Resume.pdf" class="btn btn-outline" download>
+                        <i class="fas fa-download"></i>
+                        Download CV
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="profile-card">
+                    <div class="profile-image-wrapper">
+                        <div class="profile-ring"></div>
+                        <img src="assets/profile.png" alt="Muhammad Umer" class="profile-image">
+                        <div class="profile-status">
+                            <span class="status-dot"></span>
+                        </div>
+                    </div>
+
+                    <div class="profile-terminal">
+                        <div class="terminal-header">
+                            <div class="terminal-dots">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <span class="terminal-title">umer@devops:~</span>
+                        </div>
+                        <div class="terminal-body">
+                            <div class="terminal-line">
+                                <span class="prompt">$</span> whoami
+                            </div>
+                            <div class="terminal-line output">devops-engineer</div>
+                            <div class="terminal-line">
+                                <span class="prompt">$</span> cat skills.txt
+                            </div>
+                            <div class="terminal-line output">kubernetes, terraform, aws, azure</div>
+                            <div class="terminal-line">
+                                <span class="prompt">$</span> kubectl get pods -A
+                            </div>
+                            <div class="terminal-line output success">All systems running <i class="fas fa-check-circle"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <a href="#about" class="scroll-indicator">
+            <span>Scroll Down</span>
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about" id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><i class="fas fa-user"></i> About Me</span>
+                <h2 class="section-title">Turning Infrastructure into Code</h2>
+                <p class="section-subtitle">
+                    Passionate about automating everything and building resilient cloud-native systems
+                </p>
+            </div>
+
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        As a <strong>Cybersecurity graduate</strong> from FAST National University, I've transitioned
+                        into the DevOps domain with a security-first mindset. My journey spans from researching
+                        IoT security systems to managing production Kubernetes clusters for multiple clients.
+                    </p>
+                    <p>
+                        Currently working as a <strong>DevOps Engineer</strong> at Trifusion Tech and Teammate Technology,
+                        where I lead end-to-end DevOps operations, architect cloud infrastructure, and implement
+                        GitOps workflows using modern tools like FluxCD, Terraform, and Ansible.
+                    </p>
+                    <p>
+                        I believe in <strong>Infrastructure as Code</strong>, automated testing, and continuous
+                        improvement. My goal is to help organizations achieve faster deployments, better reliability,
+                        and stronger security postures.
+                    </p>
+
+                    <div class="about-highlights">
+                        <div class="highlight">
+                            <i class="fas fa-graduation-cap"></i>
+                            <div>
+                                <h4>Education</h4>
+                                <p>BS Cybersecurity<br>FAST NUCES (2021-2025)</p>
+                            </div>
+                        </div>
+                        <div class="highlight">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Location</h4>
+                                <p>Islamabad, Pakistan<br>Remote Available</p>
+                            </div>
+                        </div>
+                        <div class="highlight">
+                            <i class="fas fa-certificate"></i>
+                            <div>
+                                <h4>Focus Areas</h4>
+                                <p>Cloud Infrastructure<br>Platform Engineering</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-cards">
+                    <div class="info-card">
+                        <div class="card-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <h3>Cloud Architecture</h3>
+                        <p>Designing and implementing scalable cloud solutions on AWS and Azure with focus on cost optimization and security.</p>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="card-icon">
+                            <i class="fas fa-dharmachakra"></i>
+                        </div>
+                        <h3>Container Orchestration</h3>
+                        <p>Managing production Kubernetes clusters with HPA, auto-scaling, and fault-tolerant microservices architectures.</p>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="card-icon">
+                            <i class="fas fa-code-branch"></i>
+                        </div>
+                        <h3>CI/CD Pipelines</h3>
+                        <p>Building automated deployment pipelines with Jenkins, GitHub Actions, and FluxCD for GitOps workflows.</p>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="card-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Observability</h3>
+                        <p>Implementing comprehensive monitoring solutions with Prometheus, Grafana, and custom exporters.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section skills" id="skills">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><i class="fas fa-tools"></i> Technical Skills</span>
+                <h2 class="section-title">My Tech Stack</h2>
+                <p class="section-subtitle">
+                    Technologies and tools I use to build and manage infrastructure
+                </p>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="category-header">
+                        <div class="category-icon cloud">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <h3>Cloud Platforms</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag"><i class="fab fa-aws"></i> AWS</span>
+                        <span class="skill-tag"><i class="fab fa-microsoft"></i> Azure</span>
+                        <span class="skill-tag"><i class="fas fa-layer-group"></i> Terraform</span>
+                        <span class="skill-tag"><i class="fas fa-cloud-upload-alt"></i> CloudFormation</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="category-header">
+                        <div class="category-icon container">
+                            <i class="fas fa-dharmachakra"></i>
+                        </div>
+                        <h3>Containers & Orchestration</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag"><i class="fas fa-dharmachakra"></i> Kubernetes</span>
+                        <span class="skill-tag"><i class="fab fa-docker"></i> Docker</span>
+                        <span class="skill-tag"><i class="fas fa-ship"></i> Helm</span>
+                        <span class="skill-tag"><i class="fas fa-sync-alt"></i> FluxCD</span>
+                        <span class="skill-tag"><i class="fas fa-cube"></i> Portainer</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="category-header">
+                        <div class="category-icon cicd">
+                            <i class="fas fa-infinity"></i>
+                        </div>
+                        <h3>CI/CD & Automation</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag"><i class="fab fa-jenkins"></i> Jenkins</span>
+                        <span class="skill-tag"><i class="fab fa-github"></i> GitHub Actions</span>
+                        <span class="skill-tag"><i class="fas fa-cogs"></i> Ansible</span>
+                        <span class="skill-tag"><i class="fas fa-bell"></i> Alertmanager</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="category-header">
+                        <div class="category-icon monitoring">
+                            <i class="fas fa-chart-area"></i>
+                        </div>
+                        <h3>Monitoring & Observability</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag"><i class="fas fa-fire"></i> Prometheus</span>
+                        <span class="skill-tag"><i class="fas fa-chart-pie"></i> Grafana</span>
+                        <span class="skill-tag"><i class="fas fa-box"></i> Blackbox Exporter</span>
+                        <span class="skill-tag"><i class="fas fa-clipboard-list"></i> Custom Exporters</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="category-header">
+                        <div class="category-icon programming">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Programming</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag"><i class="fab fa-python"></i> Python</span>
+                        <span class="skill-tag"><i class="fas fa-terminal"></i> Bash/Shell</span>
+                        <span class="skill-tag"><i class="fas fa-code"></i> C/C++</span>
+                        <span class="skill-tag"><i class="fab fa-ethereum"></i> Solidity</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="category-header">
+                        <div class="category-icon security">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Security & Networking</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag"><i class="fas fa-user-secret"></i> SOC Analysis</span>
+                        <span class="skill-tag"><i class="fas fa-search"></i> Digital Forensics</span>
+                        <span class="skill-tag"><i class="fas fa-bug"></i> Ethical Hacking</span>
+                        <span class="skill-tag"><i class="fas fa-cloud-meatball"></i> Cloudflare</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="category-header">
+                        <div class="category-icon database">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3>Databases</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag"><i class="fas fa-leaf"></i> MongoDB</span>
+                        <span class="skill-tag"><i class="fas fa-database"></i> MySQL</span>
+                        <span class="skill-tag"><i class="fas fa-elephant"></i> PostgreSQL</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="category-header">
+                        <div class="category-icon tools">
+                            <i class="fas fa-wrench"></i>
+                        </div>
+                        <h3>Tools & Platforms</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag"><i class="fab fa-git-alt"></i> Git</span>
+                        <span class="skill-tag"><i class="fas fa-bug"></i> SonarQube</span>
+                        <span class="skill-tag"><i class="fas fa-server"></i> NGINX</span>
+                        <span class="skill-tag"><i class="fab fa-linux"></i> Linux Admin</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="section experience" id="experience">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><i class="fas fa-briefcase"></i> Experience</span>
+                <h2 class="section-title">Professional Journey</h2>
+                <p class="section-subtitle">
+                    Building expertise through hands-on experience in DevOps and cloud infrastructure
+                </p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <h3>DevOps Engineer</h3>
+                                <span class="company">Trifusion Tech</span>
+                            </div>
+                            <span class="timeline-date">
+                                <i class="fas fa-calendar"></i> Aug 2025 - Present
+                            </span>
+                        </div>
+                        <ul class="timeline-list">
+                            <li>Led end-to-end DevOps operations for <strong>6+ clients</strong>, owning architecture, automation, deployment, and reliability</li>
+                            <li>Provisioned and maintained <strong>100+ cloud resources</strong> using Terraform, enforcing fully version-controlled IaC</li>
+                            <li>Executed configuration management for <strong>50+ VMs</strong> using Ansible, ensuring consistent, repeatable and secure systems</li>
+                            <li>Operated production Kubernetes clusters with HPA and auto-scaling, hosting <strong>6-7+ distributed services</strong></li>
+                            <li>Programmed and maintained CI/CD pipelines, reducing deployment time and manual intervention</li>
+                        </ul>
+                        <div class="timeline-tags">
+                            <span>Terraform</span>
+                            <span>Kubernetes</span>
+                            <span>Ansible</span>
+                            <span>CI/CD</span>
+                            <span>AWS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <h3>DevOps Engineer</h3>
+                                <span class="company">Teammate Technology</span>
+                            </div>
+                            <span class="timeline-date">
+                                <i class="fas fa-calendar"></i> Aug 2025 - Present
+                            </span>
+                        </div>
+                        <ul class="timeline-list">
+                            <li>Engineered and managed observability for <strong>150+ VMs</strong>, developing custom exporters for real-time monitoring</li>
+                            <li>Administered Kubernetes clusters via <strong>FluxCD</strong>, implementing GitOps workflows and securing secrets using SOPS</li>
+                            <li>Configured <strong>Cloudflare WARP tunnels</strong> for internal VPN, enabling secure SSH access via private DNS zones</li>
+                            <li>Ensured end-to-end VM and service reliability, proactively monitoring and resolving issues</li>
+                            <li>Provisioned multi-branch infrastructure using <strong>Terraform Cloud workspaces</strong></li>
+                        </ul>
+                        <div class="timeline-tags">
+                            <span>FluxCD</span>
+                            <span>GitOps</span>
+                            <span>Prometheus</span>
+                            <span>Cloudflare</span>
+                            <span>SOPS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <h3>Researcher - Internship</h3>
+                                <span class="company">FAST NUCES</span>
+                            </div>
+                            <span class="timeline-date">
+                                <i class="fas fa-calendar"></i> Jun 2024 - Jun 2025
+                            </span>
+                        </div>
+                        <ul class="timeline-list">
+                            <li>Researched and developed a <strong>lightweight Rank attack detection system</strong> for IoT networks</li>
+                            <li>Implemented the solution using <strong>Contiki-NG</strong> operating system for resource-constrained IoT devices</li>
+                            <li>Contributed to cybersecurity research in embedded systems and IoT security domains</li>
+                        </ul>
+                        <div class="timeline-tags">
+                            <span>IoT Security</span>
+                            <span>Contiki-NG</span>
+                            <span>C/C++</span>
+                            <span>Research</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section projects" id="projects">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><i class="fas fa-folder-open"></i> Projects</span>
+                <h2 class="section-title">Featured Work</h2>
+                <p class="section-subtitle">
+                    Production-grade projects demonstrating enterprise DevOps and cloud infrastructure expertise
+                </p>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Featured: AWS to Azure Migration -->
+                <div class="project-card featured">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>
+                        <span class="project-badge">Featured</span>
+                    </div>
+                    <h3>AWS to Azure Cloud Migration</h3>
+                    <p class="project-date"><i class="fas fa-calendar"></i> November 2025 | Production</p>
+                    <p class="project-description">
+                        Orchestrated a complete AWS to Azure migration with less than 1% service interruption,
+                        operating 2 branches across 2 Kubernetes clusters with full GitOps automation.
+                    </p>
+                    <ul class="project-highlights">
+                        <li><i class="fas fa-check"></i> Achieved <strong>40-60% cost reduction</strong> using Karpenter with Spot VM pools</li>
+                        <li><i class="fas fa-check"></i> Constructed multi-stage Docker images for <strong>6 microservices</strong></li>
+                        <li><i class="fas fa-check"></i> Full-stack observability with auto-discovery metrics for <strong>10+ VMs</strong></li>
+                        <li><i class="fas fa-check"></i> Designed segmented Azure networking with <strong>6+ VNets/subnets</strong> and NSGs</li>
+                    </ul>
+                    <div class="project-tech">
+                        <span>Azure AKS</span>
+                        <span>Karpenter</span>
+                        <span>FluxCD</span>
+                        <span>Docker</span>
+                        <span>Prometheus</span>
+                        <span>Image Automation</span>
+                    </div>
+                </div>
+
+                <!-- Multi-Region AWS with Cloudflare Zero Trust -->
+                <div class="project-card featured">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <span class="project-badge">Featured</span>
+                    </div>
+                    <h3>Multi-Region AWS with Zero Trust Security</h3>
+                    <p class="project-date"><i class="fas fa-calendar"></i> 2025 | Telimatic Client</p>
+                    <p class="project-description">
+                        Architected multi-region AWS infrastructure spanning us-east-1 and us-west-1 with
+                        Cloudflare Zero Trust integration for enterprise-grade secure access.
+                    </p>
+                    <ul class="project-highlights">
+                        <li><i class="fas fa-check"></i> Multi-region VPCs (<strong>172.30.0.0/16</strong> & <strong>172.31.0.0/16</strong>)</li>
+                        <li><i class="fas fa-check"></i> <strong>Cloudflare Tunnels</strong> for SSH access without exposed ports</li>
+                        <li><i class="fas fa-check"></i> <strong>Terraform Cloud</strong> for remote state and CI/CD integration</li>
+                        <li><i class="fas fa-check"></i> Zero Trust Access policies for secure authentication</li>
+                    </ul>
+                    <div class="project-tech">
+                        <span>AWS</span>
+                        <span>Terraform Cloud</span>
+                        <span>Cloudflare Zero Trust</span>
+                        <span>Multi-Region</span>
+                        <span>VPC</span>
+                    </div>
+                </div>
+
+                <!-- Azure Cost Optimization -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                    </div>
+                    <h3>Azure Cost Optimization - CA$76K Analysis</h3>
+                    <p class="project-date"><i class="fas fa-calendar"></i> 2025 | Cenozon Client</p>
+                    <p class="project-description">
+                        Comprehensive Azure cost analysis across 33 storage accounts, identifying wasteful
+                        spending and implementing optimization strategies.
+                    </p>
+                    <ul class="project-highlights">
+                        <li><i class="fas fa-check"></i> Analyzed <strong>CA$76,838</strong> in 6-month cloud spending</li>
+                        <li><i class="fas fa-check"></i> Identified <strong>CA$12,416 wasteful</strong> Defender malware scanning</li>
+                        <li><i class="fas fa-check"></i> Optimized <strong>33 storage accounts</strong> with tiering recommendations</li>
+                        <li><i class="fas fa-check"></i> Created detailed implementation roadmap for cost reduction</li>
+                    </ul>
+                    <div class="project-tech">
+                        <span>Azure</span>
+                        <span>Cost Management</span>
+                        <span>Storage Optimization</span>
+                        <span>Defender</span>
+                        <span>FinOps</span>
+                    </div>
+                </div>
+
+                <!-- Enterprise Ansible Automation -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                    </div>
+                    <h3>Enterprise Ansible Automation Platform</h3>
+                    <p class="project-date"><i class="fas fa-calendar"></i> 2025 | Teammate Technology</p>
+                    <p class="project-description">
+                        Built comprehensive Ansible automation platform with 11+ custom roles
+                        for VoIP infrastructure, monitoring, and service configuration.
+                    </p>
+                    <ul class="project-highlights">
+                        <li><i class="fas fa-check"></i> <strong>11+ custom roles</strong>: FSCC, OpenSIPS, Promtail, RabbitMQ, Redis</li>
+                        <li><i class="fas fa-check"></i> Automated <strong>Java, Docker, NGINX</strong> deployments across environments</li>
+                        <li><i class="fas fa-check"></i> Integrated <strong>monitoring stack</strong> (Promtail, VoIP Monitor, SNGrep)</li>
+                        <li><i class="fas fa-check"></i> Centralized inventory with group-specific variables</li>
+                    </ul>
+                    <div class="project-tech">
+                        <span>Ansible</span>
+                        <span>OpenSIPS</span>
+                        <span>RabbitMQ</span>
+                        <span>Redis</span>
+                        <span>Promtail</span>
+                    </div>
+                </div>
+
+                <!-- Enterprise Portal 500+ APIs -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                    </div>
+                    <h3>Enterprise Portal Infrastructure</h3>
+                    <p class="project-date"><i class="fas fa-calendar"></i> 2025 | Teammate Technology</p>
+                    <p class="project-description">
+                        DevOps for multi-tenant enterprise portal with 500+ API endpoints,
+                        dual authentication (Azure AD + OAuth2), and hierarchical user roles.
+                    </p>
+                    <ul class="project-highlights">
+                        <li><i class="fas fa-check"></i> <strong>500+ API endpoints</strong> with Next.js 15 and TypeScript</li>
+                        <li><i class="fas fa-check"></i> <strong>Azure AD + OAuth2</strong> dual authentication system</li>
+                        <li><i class="fas fa-check"></i> <strong>5-tier user hierarchy</strong>: SuperUser to Enterprise</li>
+                        <li><i class="fas fa-check"></i> AG Grid enterprise data grids with i18n support</li>
+                    </ul>
+                    <div class="project-tech">
+                        <span>Next.js 15</span>
+                        <span>Azure AD</span>
+                        <span>OAuth2</span>
+                        <span>TypeScript</span>
+                        <span>Multi-tenant</span>
+                    </div>
+                </div>
+
+                <!-- EPP Auto-Restarter -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fas fa-sync-alt"></i>
+                        </div>
+                    </div>
+                    <h3>Service Auto-Recovery System</h3>
+                    <p class="project-date"><i class="fas fa-calendar"></i> 2025 | Teammate Technology</p>
+                    <p class="project-description">
+                        Flask-based service recovery system with Alertmanager webhook integration
+                        for automated VoIP service restarts and real-time monitoring.
+                    </p>
+                    <ul class="project-highlights">
+                        <li><i class="fas fa-check"></i> <strong>Alertmanager webhook</strong> integration for auto-recovery</li>
+                        <li><i class="fas fa-check"></i> Real-time <strong>Web UI dashboard</strong> with 30s auto-refresh</li>
+                        <li><i class="fas fa-check"></i> <strong>Process Exporter</strong> integration for service status</li>
+                        <li><i class="fas fa-check"></i> RESTful API for programmatic service management</li>
+                    </ul>
+                    <div class="project-tech">
+                        <span>Flask</span>
+                        <span>Alertmanager</span>
+                        <span>Prometheus</span>
+                        <span>Process Exporter</span>
+                        <span>Python</span>
+                    </div>
+                </div>
+
+                <!-- AWS ECR Credentials Auto-Refresh -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fas fa-key"></i>
+                        </div>
+                    </div>
+                    <h3>Kubernetes ECR Credentials Automation</h3>
+                    <p class="project-date"><i class="fas fa-calendar"></i> 2025 | DevOps Utility</p>
+                    <p class="project-description">
+                        Kubernetes CronJob solution for automatic AWS ECR credential refresh,
+                        preventing image pull failures in production clusters.
+                    </p>
+                    <ul class="project-highlights">
+                        <li><i class="fas fa-check"></i> <strong>CronJob</strong> runs every 11 hours (before 12hr expiry)</li>
+                        <li><i class="fas fa-check"></i> Custom <strong>RBAC</strong> with ServiceAccount and Role bindings</li>
+                        <li><i class="fas fa-check"></i> <strong>Zero downtime</strong> image pulls with automatic refresh</li>
+                        <li><i class="fas fa-check"></i> Eliminates manual credential management</li>
+                    </ul>
+                    <div class="project-tech">
+                        <span>Kubernetes</span>
+                        <span>AWS ECR</span>
+                        <span>CronJob</span>
+                        <span>RBAC</span>
+                        <span>AWS CLI</span>
+                    </div>
+                </div>
+
+                <!-- EverythingCloud Platform -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                    </div>
+                    <h3>Cloud Cost Management Platform</h3>
+                    <p class="project-date"><i class="fas fa-calendar"></i> 2025 | EverythingCloud</p>
+                    <p class="project-description">
+                        DevOps for Django-based cloud cost management platform with full
+                        observability stack and multi-environment Docker deployment.
+                    </p>
+                    <ul class="project-highlights">
+                        <li><i class="fas fa-check"></i> <strong>20+ Django apps</strong> for cloud resource management</li>
+                        <li><i class="fas fa-check"></i> Full observability: <strong>Grafana, Loki, Prometheus, Promtail</strong></li>
+                        <li><i class="fas fa-check"></i> <strong>Docker Compose</strong> multi-service deployments</li>
+                        <li><i class="fas fa-check"></i> Stripe integration with DJStripe for payments</li>
+                    </ul>
+                    <div class="project-tech">
+                        <span>Django</span>
+                        <span>Docker</span>
+                        <span>Grafana</span>
+                        <span>Loki</span>
+                        <span>Prometheus</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><i class="fas fa-envelope"></i> Contact</span>
+                <h2 class="section-title">Let's Work Together</h2>
+                <p class="section-subtitle">
+                    Have a project in mind? I'd love to hear about it.
+                </p>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <a href="mailto:business.umer1@gmail.com">business.umer1@gmail.com</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Phone</h4>
+                            <a href="tel:+923134266587">+92 313 4266587</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Location</h4>
+                            <p>Islamabad, Pakistan</p>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/muhammad-umer-384ab7253" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/UmerGulzar223" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://medium.com/@business.umer1" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Medium">
+                            <i class="fab fa-medium-m"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="contact-cta">
+                    <div class="cta-card">
+                        <h3>Ready to start a project?</h3>
+                        <p>
+                            Whether you need help with cloud infrastructure, CI/CD pipelines,
+                            or Kubernetes deployments, I'm here to help you build scalable
+                            and reliable systems.
+                        </p>
+                        <div class="cta-buttons">
+                            <a href="mailto:business.umer1@gmail.com" class="btn btn-primary btn-lg">
+                                <i class="fas fa-paper-plane"></i>
+                                Send Message
+                            </a>
+                            <a href="Muhammad_Umer_Resume.pdf" class="btn btn-outline btn-lg" download>
+                                <i class="fas fa-download"></i>
+                                Download Resume
+                            </a>
+                        </div>
+
+                        <div class="availability">
+                            <span class="availability-dot"></span>
+                            <span>Available for DevOps & Cloud opportunities</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-bracket">{</span>
+                    <span class="logo-text">MU</span>
+                    <span class="logo-bracket">}</span>
+                    <p>DevOps Engineer</p>
+                </div>
+
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#experience">Experience</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </div>
+
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/in/muhammad-umer-384ab7253" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/UmerGulzar223" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://medium.com/@business.umer1" target="_blank" rel="noopener noreferrer" aria-label="Medium">
+                        <i class="fab fa-medium-m"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Muhammad Umer. All rights reserved.</p>
+                <p class="footer-tagline">Built with <i class="fas fa-heart"></i> and deployed with CI/CD</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+</body>
+</html>

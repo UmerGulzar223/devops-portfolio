@@ -1,36 +1,143 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Muhammad Umer - DevOps Portfolio
 
-## Getting Started
+A professional portfolio website showcasing DevOps engineering skills, experience, and projects.
 
-First, run the development server:
+## Live Site
+
+Visit: [muhammadumer.work](https://muhammadumer.work)
+
+## Features
+
+- Modern, responsive design
+- Dark theme with professional aesthetics
+- Terminal-style animations
+- Smooth scroll navigation
+- Typing effect for role showcase
+- Scroll-triggered animations
+- Mobile-friendly layout
+- Fast loading (pure HTML/CSS/JS)
+
+## Tech Stack
+
+- HTML5
+- CSS3 (Custom Properties, Flexbox, Grid)
+- Vanilla JavaScript
+- Font Awesome Icons
+- Google Fonts (Inter, JetBrains Mono)
+
+## Deployment to GitHub Pages
+
+### Step 1: Create GitHub Repository
+
+1. Go to [github.com](https://github.com) and create a new repository
+2. Set it to **Public**
+3. Don't initialize with README (we'll push our code)
+
+### Step 2: Enable GitHub Pages
+
+1. Go to your repository on GitHub
+2. Click **Settings** tab
+3. Scroll down to **Pages** (in the left sidebar)
+4. Under "Source", select **Deploy from a branch**
+5. Select `main` branch and `/ (root)` folder
+6. Click **Save**
+7. Wait 1-2 minutes for deployment
+
+### Step 3: Configure Custom Domain (muhammadumer.work)
+
+1. Configure DNS at your domain registrar:
+
+   **For Apex Domain (muhammadumer.work):**
+   Add these A records pointing to GitHub's servers:
+   ```
+   185.199.108.153
+   185.199.109.153
+   185.199.110.153
+   185.199.111.153
+   ```
+
+   **For www subdomain (optional):**
+   Add a CNAME record:
+   ```
+   CNAME: www -> YOUR_USERNAME.github.io
+   ```
+
+2. In GitHub repo Settings > Pages:
+   - Enter your custom domain: `muhammadumer.work`
+   - Check "Enforce HTTPS"
+   - Wait for DNS verification (can take up to 24 hours)
+
+## Local Development
+
+Simply open `index.html` in a browser, or use a local server:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Using Python
+python -m http.server 8000
+
+# Using Node.js (npx)
+npx serve
+
+# Using PHP
+php -S localhost:8000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then visit `http://localhost:8000`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Customization
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Update Personal Information
 
-## Learn More
+1. Edit `index.html`:
+   - Update name, email, phone
+   - Modify experience and projects
+   - Change social links (LinkedIn, GitHub, Medium)
 
-To learn more about Next.js, take a look at the following resources:
+2. Edit `CNAME`:
+   - Already set to `muhammadumer.work`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. Replace `assets/profile.png`:
+   - Add your own profile photo
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+4. Replace `Muhammad_Umer_Resume.pdf`:
+   - Add your own resume/CV
 
-## Deploy on Vercel
+### Update Styling
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Edit `css/style.css`:
+- Colors are defined as CSS variables at the top
+- Primary color: `--primary: #6366f1`
+- Secondary color: `--secondary: #10b981`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## File Structure
+
+```
+devops-portfolio/
+├── index.html              # Main HTML file
+├── 404.html                # Custom 404 page
+├── CNAME                   # Custom domain (muhammadumer.work)
+├── .nojekyll               # Disable Jekyll processing
+├── Muhammad_Umer_Resume.pdf # Resume for download
+├── css/
+│   └── style.css           # All styles
+├── js/
+│   └── main.js             # All JavaScript
+└── assets/
+    └── profile.png         # Profile photo
+```
+
+## Browser Support
+
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+- Mobile browsers
+
+## License
+
+MIT License
+
+---
+
+Built by Muhammad Umer | DevOps Engineer
