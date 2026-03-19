@@ -1,300 +1,162 @@
-/* ============================================
-   Muhammad Umer - DevOps Portfolio
-   Main JavaScript
-   ============================================ */
+/* ============================================================
+   Muhammad Umer — DevOps Portfolio
+   ============================================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Initialize all components
     initLoader();
-    initNavigation();
-    initTypingEffect();
-    initScrollAnimations();
+    initNav();
+    initReveal();
+    initTyping();
+    initCounters();
     initScrollProgress();
 });
 
-/* ============================================
-   Loader
-   ============================================ */
+/* ── Loader ── */
 function initLoader() {
     const loader = document.getElementById('loader');
+    const bar    = document.getElementById('loaderBar');
+    let p = 0;
+
+    const iv = setInterval(() => {
+        p += Math.random() * 20;
+        if (p >= 100) { p = 100; clearInterval(iv); }
+        bar.style.width = p + '%';
+    }, 55);
 
     window.addEventListener('load', () => {
         setTimeout(() => {
-            loader.classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        }, 800);
+            bar.style.width = '100%';
+            setTimeout(() => {
+                loader.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+                // trigger hero name reveal
+                document.querySelectorAll('.name-row').forEach((el, i) => {
+                    setTimeout(() => el.classList.add('revealed'), 80 + i * 130);
+                });
+            }, 380);
+        }, 250);
     });
 }
 
-/* ============================================
-   Navigation
-   ============================================ */
-function initNavigation() {
-    const navbar = document.getElementById('navbar');
-    const navToggle = document.getElementById('nav-toggle');
-    const navMenu = document.getElementById('nav-menu');
-    const navLinks = document.querySelectorAll('.nav-link');
-
-    // Scroll effect for navbar
-    let lastScroll = 0;
-
-    window.addEventListener('scroll', () => {
-        const currentScroll = window.pageYOffset;
-
-        // Add scrolled class
-        if (currentScroll > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-
-        lastScroll = currentScroll;
-    });
-
-    // Mobile menu toggle
-    navToggle.addEventListener('click', () => {
-        navToggle.classList.toggle('active');
-        navMenu.classList.toggle('active');
-    });
-
-    // Close menu on link click
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            navToggle.classList.remove('active');
-            navMenu.classList.remove('active');
-        });
-    });
-
-    // Active link on scroll
+/* ── Navigation ── */
+function initNav() {
+    const navbar   = document.getElementById('navbar');
+    const toggle   = document.getElementById('nav-toggle');
+    const menu     = document.getElementById('nav-menu');
+    const links    = document.querySelectorAll('.nav-link');
     const sections = document.querySelectorAll('section[id]');
 
-    function updateActiveLink() {
-        const scrollPos = window.scrollY + 100;
+    window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 40);
+        updateActive();
+    }, { passive: true });
 
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.offsetHeight;
-            const sectionId = section.getAttribute('id');
+    toggle.addEventListener('click', () => {
+        toggle.classList.toggle('active');
+        menu.classList.toggle('active');
+    });
+    links.forEach(l => l.addEventListener('click', () => {
+        toggle.classList.remove('active');
+        menu.classList.remove('active');
+    }));
 
-            if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === `#${sectionId}`) {
-                        link.classList.add('active');
-                    }
-                });
+    function updateActive() {
+        const y = window.scrollY + 110;
+        sections.forEach(s => {
+            if (y >= s.offsetTop && y < s.offsetTop + s.offsetHeight) {
+                links.forEach(l => l.classList.remove('active'));
+                const m = document.querySelector(`.nav-link[href="#${s.id}"]`);
+                if (m) m.classList.add('active');
             }
         });
     }
-
-    window.addEventListener('scroll', updateActiveLink);
-    updateActiveLink();
+    updateActive();
 }
 
-/* ============================================
-   Typing Effect
-   ============================================ */
-function initTypingEffect() {
-    const typedText = document.getElementById('typed-text');
+/* ── Scroll Reveal ── */
+function initReveal() {
+    const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+            if (!e.isIntersecting) return;
+            const delay = parseInt(e.target.getAttribute('data-delay') || 0);
+            setTimeout(() => e.target.classList.add('revealed'), delay);
+            obs.unobserve(e.target);
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('[data-reveal]').forEach(el => obs.observe(el));
+}
+
+/* ── Typing Effect ── */
+function initTyping() {
+    const el = document.getElementById('typed-text');
+    if (!el) return;
+
     const roles = [
         'DevOps Engineer',
         'Cloud Architect',
         'Kubernetes Specialist',
         'CI/CD Pipeline Expert',
         'Infrastructure as Code',
-        'GitOps Practitioner'
+        'GitOps Practitioner',
+        'Automation Engineer'
     ];
 
-    let roleIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-    let typingSpeed = 100;
+    let ri = 0, ci = 0, del = false, spd = 100;
 
-    function type() {
-        const currentRole = roles[roleIndex];
+    function tick() {
+        const cur = roles[ri];
+        if (del) { el.textContent = cur.slice(0, ci - 1); ci--; spd = 42; }
+        else      { el.textContent = cur.slice(0, ci + 1); ci++; spd = 100; }
 
-        if (isDeleting) {
-            typedText.textContent = currentRole.substring(0, charIndex - 1);
-            charIndex--;
-            typingSpeed = 50;
-        } else {
-            typedText.textContent = currentRole.substring(0, charIndex + 1);
-            charIndex++;
-            typingSpeed = 100;
-        }
+        if (!del && ci === cur.length) { spd = 2400; del = true; }
+        else if (del && ci === 0)      { del = false; ri = (ri + 1) % roles.length; spd = 420; }
 
-        if (!isDeleting && charIndex === currentRole.length) {
-            // Pause at end of word
-            typingSpeed = 2000;
-            isDeleting = true;
-        } else if (isDeleting && charIndex === 0) {
-            isDeleting = false;
-            roleIndex = (roleIndex + 1) % roles.length;
-            typingSpeed = 500;
-        }
-
-        setTimeout(type, typingSpeed);
+        setTimeout(tick, spd);
     }
-
-    // Start typing
-    setTimeout(type, 1000);
+    setTimeout(tick, 1400);
 }
 
-/* ============================================
-   Scroll Animations
-   ============================================ */
-function initScrollAnimations() {
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-
-                // Add stagger animation to children if needed
-                if (entry.target.classList.contains('stagger-children')) {
-                    const children = entry.target.children;
-                    Array.from(children).forEach((child, index) => {
-                        setTimeout(() => {
-                            child.style.opacity = '1';
-                            child.style.transform = 'translateY(0)';
-                        }, index * 100);
-                    });
-                }
-            }
+/* ── Counter Animation ── */
+function initCounters() {
+    const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+            if (!e.isIntersecting) return;
+            const el  = e.target;
+            const end = parseInt(el.getAttribute('data-count'));
+            countUp(el, end);
+            obs.unobserve(el);
         });
-    }, observerOptions);
+    }, { threshold: 0.6 });
 
-    // Observe elements
-    const animatedElements = document.querySelectorAll(
-        '.section-header, .about-text, .about-cards, .info-card, ' +
-        '.skill-category, .timeline-item, .project-card, ' +
-        '.contact-card, .cta-card'
-    );
-
-    animatedElements.forEach(el => {
-        el.classList.add('fade-in');
-        observer.observe(el);
-    });
-
-    // Add stagger class to grids
-    const grids = document.querySelectorAll('.skills-grid, .about-cards, .projects-grid');
-    grids.forEach(grid => {
-        grid.classList.add('stagger-children');
-        observer.observe(grid);
-    });
+    document.querySelectorAll('.metric-num[data-count]').forEach(el => obs.observe(el));
 }
 
-/* ============================================
-   Scroll Progress
-   ============================================ */
+function countUp(el, end) {
+    const dur = 1600, start = performance.now();
+    function step(now) {
+        const t = Math.min((now - start) / dur, 1);
+        const e = 1 - Math.pow(1 - t, 3);
+        el.textContent = Math.floor(e * end);
+        if (t < 1) requestAnimationFrame(step);
+        else el.textContent = end;
+    }
+    requestAnimationFrame(step);
+}
+
+/* ── Scroll Progress ── */
 function initScrollProgress() {
-    // Create progress bar
-    const progressBar = document.createElement('div');
-    progressBar.style.cssText = `
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 3px;
-        background: linear-gradient(90deg, #6366f1, #06b6d4);
-        z-index: 9999;
-        transition: width 0.1s ease;
-    `;
-    document.body.appendChild(progressBar);
-
+    const bar = document.getElementById('scrollProgress');
     window.addEventListener('scroll', () => {
-        const scrollTop = window.pageYOffset;
-        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-        const scrollPercent = (scrollTop / docHeight) * 100;
-        progressBar.style.width = `${scrollPercent}%`;
-    });
+        const pct = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+        bar.style.width = pct + '%';
+    }, { passive: true });
 }
 
-/* ============================================
-   Smooth Scroll for Anchor Links
-   ============================================ */
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
+/* ── Smooth Scroll ── */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', function(e) {
+        const t = document.querySelector(this.getAttribute('href'));
+        if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
     });
-});
-
-/* ============================================
-   Copy Email to Clipboard
-   ============================================ */
-function copyEmail() {
-    const email = 'business.umer1@gmail.com';
-    navigator.clipboard.writeText(email).then(() => {
-        // Show toast notification
-        showToast('Email copied to clipboard!');
-    });
-}
-
-function showToast(message) {
-    const toast = document.createElement('div');
-    toast.textContent = message;
-    toast.style.cssText = `
-        position: fixed;
-        bottom: 24px;
-        right: 24px;
-        padding: 16px 24px;
-        background: #10b981;
-        color: white;
-        border-radius: 8px;
-        font-size: 0.9rem;
-        z-index: 10000;
-        animation: slideIn 0.3s ease;
-    `;
-
-    document.body.appendChild(toast);
-
-    setTimeout(() => {
-        toast.style.animation = 'slideOut 0.3s ease';
-        setTimeout(() => toast.remove(), 300);
-    }, 3000);
-}
-
-// Add animation keyframes
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes slideIn {
-        from { transform: translateX(100%); opacity: 0; }
-        to { transform: translateX(0); opacity: 1; }
-    }
-    @keyframes slideOut {
-        from { transform: translateX(0); opacity: 1; }
-        to { transform: translateX(100%); opacity: 0; }
-    }
-`;
-document.head.appendChild(style);
-
-/* ============================================
-   Terminal Animation (Hero Section)
-   ============================================ */
-function animateTerminal() {
-    const terminalLines = document.querySelectorAll('.terminal-line');
-    let delay = 0;
-
-    terminalLines.forEach((line, index) => {
-        setTimeout(() => {
-            line.style.opacity = '1';
-        }, delay);
-        delay += 500;
-    });
-}
-
-// Run terminal animation after page load
-window.addEventListener('load', () => {
-    setTimeout(animateTerminal, 1500);
 });
